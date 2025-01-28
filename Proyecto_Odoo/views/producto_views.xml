@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_producto_form" model="ir.ui.view">
+        <field name="name">producto.form</field>
+        <field name="model">proyecto_odoo.producto</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" placeholder="Nombre del producto"/>
+                        <field name="codigo" placeholder="Código del producto"/>
+                        <field name="periodo_id" placeholder="Seleccione un período"/>
+                        <field name="partes_ids" widget="many2many_tags" placeholder="Seleccione partes"/>
+                        <field name="peso_total" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_producto_list" model="ir.ui.view">
+        <field name="name">producto.list</field>
+        <field name="model">proyecto_odoo.producto</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="codigo"/>
+                <field name="peso_total"/>
+                <button string="Mostrar Partes Y Tipos" type="object" name="obtener_partes_y_tipos" class="btn-primary"/>
+                <button string="Filtrar Productos" type="object" name="filtrar_productos_por_peso" class="btn-primary"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_producto" model="ir.actions.act_window">
+        <field name="name">Productos</field>
+        <field name="res_model">proyecto_odoo.producto</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

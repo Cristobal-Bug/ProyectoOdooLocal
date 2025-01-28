@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_parte_form" model="ir.ui.view">
+        <field name="name">parte.form</field>
+        <field name="model">proyecto_odoo.parte</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="custom_id" placeholder="Ingrese un ID único" required="1"/>
+                        <field name="name" placeholder="Nombre de la parte"/>
+                        <field name="tipo" placeholder="Seleccione el tipo"/>
+                        <field name="peso" placeholder="Ingrese peso (Kg)"/>
+                        <field name="material" placeholder="Ingrese el material"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_parte_list" model="ir.ui.view">
+        <field name="name">parte.list</field>
+        <field name="model">proyecto_odoo.parte</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="custom_id"/>
+                <field name="name"/>
+                <field name="tipo"/>
+                <field name="peso"/>
+                <field name="material"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acción para llamar a las vistas desde el menú -->
+    <record id="action_parte_list" model="ir.actions.act_window">
+        <field name="name">Partes</field>
+        <field name="res_model">proyecto_odoo.parte</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_parte_list"/>
+    </record>
+</odoo>

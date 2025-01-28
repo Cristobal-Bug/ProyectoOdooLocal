@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_producto,access.producto,model_proyecto_odoo_producto,base.group_user,1,1,1,1
+access_periodo,access.periodo,model_proyecto_odoo_periodo,base.group_user,1,1,1,1
+access_parte,access.parte,model_proyecto_odoo_parte,base.group_user,1,1,1,1
+access_wizard_mensaje_producto,wizard.mensaje.producto,model_wizard_mensaje_producto,,1,0,0,0

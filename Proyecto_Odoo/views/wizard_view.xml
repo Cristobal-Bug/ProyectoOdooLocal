@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_wizard_mensaje_producto_form" model="ir.ui.view">
+        <field name="name">wizard.mensaje.producto.form</field>
+        <field name="model">wizard.mensaje.producto</field>
+        <field name="arch" type="xml">
+            <form string="Partes del Producto">
+                <div class="oe_title">
+                    <field name="message" nolabel="1" readonly="1"/>
+                </div>
+                <footer>
+                    <button string="Cerrar" class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
